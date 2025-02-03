@@ -8,7 +8,7 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 // MongoDB connection
-mongoose.connect('mongodb+srv://infiniteloop558:pass123@bcdb.xiii5ot.mongodb.net/testing_socket', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongo-string', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.log('MongoDB connection error:', err));
 
