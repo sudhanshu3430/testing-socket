@@ -12,8 +12,14 @@ socket.on('connect', () => {
 
 // Listen for new orders
 socket.on('newOrder', (order) => {
-  console.log('Received new order:', order);
-});
+    console.log('Received new order:', order);
+  
+    // Simulate accepting the order
+    console.log(`Vendor accepting order with ID: ${order._id}`);
+  
+    // Emit the "acceptOrder" event to update the order status
+    socket.emit('acceptOrder', order._id);
+  });
 
 // Listen for order status updates
 socket.on('orderStatusUpdated', (order) => {

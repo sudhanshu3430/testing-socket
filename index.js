@@ -57,7 +57,7 @@ io.on('connection', (socket) => {
 
      
 
-    await Vendor.findOneAndUpdate({name: "Vendor One"}, { socketId: `${socketId.toString()}` })
+    await Vendor.findOneAndUpdate({_id: new mongoose.Types.ObjectId(vendorId)}, { socketId: `${socketId.toString()}` })
       .then(() => console.log('Vendor registered with socket ID:', socket.id))
       .catch((err) => console.log('Error registering vendor:', err));
   });
